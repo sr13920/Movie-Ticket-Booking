@@ -1,0 +1,77 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<h1 mat-dialog-title>Add Movie</h1>
+<div mat-dialog-content style="padding-top: 20px">
+  <form #registerForm="ngForm" (ngSubmit)="close()">
+    <fieldset>
+      <div class="form-group">
+        <mat-form-field class="outline" appearance="outline">
+          <mat-label> Movie Name</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="movieData.movieName"
+            name="moviename"
+            class="form-control phone"
+            maxlength="28"
+            placeholder="Enter Movie Name"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="outline" appearance="outline">
+          <mat-label> Theater Name</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="movieData.theaterName"
+            name="theatername"
+            class="form-control phone"
+            maxlength="28"
+            placeholder="Enter Theater Name"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="outline" appearance="outline">
+          <mat-label> Total Tickets</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="movieData.availableTickets"
+            name="totaltickets"
+            id="totaltickets"
+            class="form-control phone"
+            maxlength="28"
+            placeholder="Enter Total Tickets"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div style="text-align: center">
+        <input
+          class="btn btn-success"
+          style="margin-right: 5px"
+          type="submit"
+          name="save"
+          value="Add"
+          [disabled]="registerForm.invalid"
+        />
+        <input
+          class="btn btn-success"
+          style="margin-left: 5px"
+          name="close"
+          value="Cancel"
+          mat-dialog-close
+        />
+      </div>
+    </fieldset>
+  </form>
+</div>
